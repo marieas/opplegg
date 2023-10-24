@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            display: grid;
+            grid-template-columns: 100px 100px;
+        }
+        .click{
+            cursor: pointer;
+        }
+        .pot{
+            display: grid;
+            grid-template-columns: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Spaghetti</h2>
+    <img src="spaghetti.jpg" height="50px">
+    <div class="container">
+        <h3>Ingredienser</h3>
+        <div>
+            <ul class="click">
+                <li onclick="addIngredientToPot(this)" >pasta</li>
+                <li onclick="addIngredientToPot(this)">tomat</li>
+                <li onclick="addIngredientToPot(this)">salt</li>
+                <li onclick="addIngredientToPot(this)">pepper</li>
+            </ul>
+        </div> 
+        <div id="pot" class="pot">
+            <h3>Pot</h3>
+        </div>
+    </div>
+
+    <script>
+        function addIngredientToPot(ingredient){
+            document.getElementById("pot").innerHTML += ingredient.innerHTML + " ";
+        }
+    </script>
+</body>
+</html>

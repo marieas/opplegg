@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Min første nettside</title>
+    <style>
+        .container{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        .text{
+            color: white;
+            text-align: center;
+            margin: 10px;
+        }
+        .green{
+            background-color: lightgreen;
+            box-shadow: 5px 5px 10px darkgrey;
+            cursor: pointer;
+        }
+        .blue{
+            background-color: lightskyblue;
+        }
+        .red{
+            background-color: lightcoral;
+        }
+        .gray{
+            background-color: darkgray;
+        }
+        .box{
+            background-color: lightgray;
+            border: 1px solid darkgray;
+            margin: 10px;
+        }
+        .font{
+            color: black; 
+            font-size: small;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button onclick="changeColor()">knapp1</button>
+        <button onclick="changeColorBtn(this)">changeColor</button>
+        <button id="knapp3" onclick="changeText()">knapp3</button>
+        <button onclick="setSelectedColorToBlue()">set color blue</button>
+    </div>
+    <marquee>Eksempel  1
+        <img src="cat.jpg" height="100px">
+    </marquee>
+    <p id="verktøy" class="green text" onclick="toggleVisibility()">Verktøy</p>
+    <div id="myBox" class="box" >
+        <div class="font">
+            <p>De to viktigste verktøyene vi skal bruke er disse:</p>
+            <ul>
+                <li>
+                    koderedigeringsprogrammet
+                    <a href="http://www.google.com">visual studio code</a>
+                </li>
+                <p>Vi skal bruke noen extensions:
+                    <ul>
+                        <li>JavaScript-booster</li>
+                        <li>es6-string-html</li>
+                        <li>live-server</li>
+                        <li>live-share</li>
+                    </ul>
+                </p>
+            </ul>
+        </div>
+    </div>
+    <div class="blue text">HTML</div>
+    <div class="red text">CSS</div>
+    <div class="gray text">Javascript</div>
+    <script>
+        let selectedColor = "orange"
+
+        function setSelectedColorToBlue(){
+            selectedColor = "blue"
+        }
+        function changeColor(){
+            document.getElementById("verktøy").style.backgroundColor = "pink";
+        }
+        function changeColorBtn(htmlElement){
+            htmlElement.style.backgroundColor = selectedColor;
+        }
+        function changeText(){
+            document.getElementById("knapp3").innerHTML = "Du trykte på knappen"
+        }
+
+        function toggleVisibility(){
+            document.getElementById("myBox").style.visibility = "hidden"
+        }
+        // inventory filler
+        // egen oppgave: Oppskrift/fortsette
+    </script>
+</body>
+</html>

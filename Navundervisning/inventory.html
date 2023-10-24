@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="inventory"></div>
+    <div onclick="addImageToInv(this)"> <img src="car.jpg"></div>
+    <div onclick="addImageToInv(this)"> <img src="cat2.jpg"></div>
+<div onclick="addImageToInv(this)"> <img src="sun.jpg"> </div>
+
+<script>
+let inventory = document.getElementById("inventory");
+
+function addImageToInv(clickedImage){
+ inventory.innerHTML += clickedImage.innerHTML;
+}
+
+</script>
+
+</body>
+</html>
